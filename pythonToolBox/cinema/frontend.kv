@@ -1,0 +1,76 @@
+<FirstScreen>:
+
+    GridLayout:
+        cols:1
+        padding:10
+        spacing:10
+        background_color:(1,1,1,1)
+        canvas.before:
+            Color:
+                rgba:self.background_color
+            Rectangle:
+                size:self.size
+                pos: self.pos
+
+        TextInput:
+            id:seat_no
+            hint_text:"seat number: "
+            size_hint_y:0.1
+            size_hint_x:0.5
+            background_color:(210/255,210/255,210/255,210/255)
+
+        TextInput:
+            id:card_no
+            hint_text:"Acount Number: "
+            size_hint_y:0.1
+            size_hint_x:0.5
+            background_color:(210/255,210/255,210/255,210/255)
+
+        TextInput:
+            id:cvc
+            hint_text:"CVC number: "
+            size_hint_y:0.1
+            size_hint_x:0.5
+            background_color:(210/255,210/255,210/255,210/255)
+
+        TextInput:
+            id:holder_name
+            hint_text:"Name of the ticket owner: "
+            size_hint_y:0.1
+            size_hint_x:0.5
+            background_color:(210/255,210/255,210/255,210/255)
+
+        Button:
+            pos_hint:{'center_x': 0.5}
+            size_hint:  (.05,.1)
+            text:'buy'
+            on_press: root.buy()
+            background_color:(0,0,0,0)
+            canvas.before:
+                Color: 
+                    rgba: (32/255,40/255,121/255,0.8)
+                RoundedRectangle:
+                    size:self.size
+                    pos:self.pos
+                    radius: [58]                
+
+        Label:
+            size_hint_y:0.2
+            id:result_label
+            background_color:(210/255,210/255,210/255,210/255)
+            text:"Let's buy a ticket!"
+            canvas.before:
+                Color:
+                    rgba:self.background_color
+                Rectangle:
+                    size:self.size
+                    pos: self.pos
+            #setting the text properties 
+            color: (131/255,40/255,117/255,0.8)
+            bold:True
+            outline_color:(0.5, 0.4, 0.7)
+
+<RootWidget>:
+    FirstScreen:
+        id:first_screen
+        name: 'first_screen'

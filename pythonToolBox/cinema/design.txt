@@ -1,0 +1,13 @@
+title: Cinema ticket buying system
+In this app the user selects a seat and pays for the seat with credit card if the seat is
+not taken, a ticket is prepared in a pdf file
+
+cards:
+    update_card()
+    check_validity()
+
+seat:
+    id, taken, price
+    buy()
+    create_pdf_ticket()
+    check_if_available()

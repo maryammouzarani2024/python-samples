@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/style.css">
+
+</head>
+<body id="dark">
+<h2>Calerie Calculation Form</h2>
+<p>Fill in the form and click the button to know how many calerie you need today</p>
+<p> lets get some info about you first.</p>
+<form action="caleries" method="post">
+  {{calc_form.weight.label}} {{calc_form.weight}}
+  <br>
+  {{calc_form.height.label}} {{calc_form.height}}
+  <br>
+  {{calc_form.age.label}} {{calc_form.age}}
+  <hr>
+  <p>Today's weather counts too.</p>
+  <p>Tell us where you are so we include today's weather into the calculation.</p>
+  {{calc_form.city.label}} {{calc_form.city}}
+  <br>
+  {{calc_form.country.label}} {{calc_form.country}}
+  <br>
+  {{calc_form.calculate_button}}
+
+</form>
+ {% if result %}
+    <p> you need {{caleries}} today</p>
+    {% endif %}
+</body>
+</html>

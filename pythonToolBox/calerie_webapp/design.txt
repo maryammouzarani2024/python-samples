@@ -1,0 +1,23 @@
+Title: Calerie Calculator
+Description: an application that gets the user's weight, height, age, city and country
+and scrapes the web for daily temperature at the user's location and calculates the required
+amount of calerie by the user.
+
+
+Since we do not need to store a record of users we do not need a user class.
+we also do not need a specific behavior of users.
+
+So the classes we need are:
+
+CalerieCalculator:
+        weight
+        height
+        age
+        temperature
+        calculate()
+
+TemperatureScraper:
+    country
+    city
+    get()
+

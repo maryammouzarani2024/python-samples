@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: sunnyday
+Version: 1.0.1
+Summary: Weather forcast data
+Home-page: github_url
+Author: mm
+Author-email: mm@yahoo.com
+License: MIT
+Keywords: weather,forecast,openweather
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience:: Developers
+Classifier: Programming Languages:: python:: 3.5Programming Languages:: python:: 3.6Programming Languages:: python:: 3.7Programming Languages:: python:: 3.8
+Requires-Dist: requests

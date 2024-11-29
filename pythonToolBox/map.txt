@@ -1,0 +1,70 @@
+1. flatmate
+        oop design
+        handling user input with CLI
+        creating a pdf file
+
+2. mathpainter
+        GUI with kivy
+        creating shapes in canvas
+
+3. photosearcher
+        GUI with kivy
+        searching for and downloading an image from wikipedia
+        creating and showing an image file
+
+4. webcamPhotoShare
+        GUI with kivy
+        control the webcam, take picture, store as an image
+        upload an image  file in cloud and share the link
+        open a link in web browser
+
+5. flatmatesWeb
+        web pages creation with Flask
+        CSS
+6.  caleries
+        web scarping and extracting data from a webpage
+        web page creation and styling with Flask
+7.email
+        automatic sending emails
+        manipulating data in Excel files
+        working with api
+        working with pandas library for data analysis
+        libraries: xlrd or openpyxl for getting data from an excel file
+                   pandas to perform data analysis
+
+        getting time and date dynamically
+        scheduling the code execution
+8. Instant Dictionary
+        -working with justpy library to create a webapp only with python not with html, css, ...
+        -adding menu to the webapp
+        -using justpy and quasar python libraries to implement the front-end with python code
+        -adding routes dynamically using the globals obj
+        -abstract class
+9- dictionary API
+        -building Rest APIs
+        -writing api documentation
+10- cinema
+        -database, sqlite
+
+11- library
+        - creating library called sunnyday for weather forecast and documenting help information
+        -uploading the library sunnyday into pypi repository
+        ->>python setup.py sdist
+        ->>twine upload --skip-existing dist/* => to upload all the files in the dist folder into pypi
+        to update your library in pipy:
+            1. make the changes in your library code
+            2. update the setup.py specially the version
+            3. build the package again and upload it with twine
+
+
+
+
+
+
+
+
+
+
+
+
+

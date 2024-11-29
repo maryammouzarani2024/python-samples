@@ -1,0 +1,84 @@
+<CameraScreen>: # a screen for the camera screen class
+    GridLayout:
+        cols:1 # there is one column in the grid
+        spacing: 10
+        padding: 10
+        Camera:
+            size_hint_y:0.8
+            id: camera
+            resolution: (640, 480)
+            opacity:0# make the camera transparent at the beginning
+        Button:
+            id:button_camera
+            size_hint_y: 0.1
+            text:'Start Camera'
+            background_normal: 'images/orange.jpg'
+            background_down:'images/red.jpg'
+            on_press: root.start() if root.ids.camera.play==False else root.stop()
+            # root refers to the current screen (cameraScreen) and start is the function of this class
+
+        Button:
+            size_hint_y: 0.1
+            text: 'Capture'
+            on_press: root.capture()
+            background_normal: 'images/orange.jpg'
+            background_down:'images/red.jpg'
+<ImageScreen>:
+    GridLayout:
+        spacing:10
+        padding:10
+        cols:1
+
+        Image:
+            id:img1
+            size_hint_y:0.7
+        Button:
+            size_hint_y:0.1
+            text:'Create sharable link'
+            on_press:root.create_link()
+            background_normal: 'images/orange.jpg'
+            background_down:'images/red.jpg'
+        Label:
+            size_hint_y:0.1
+            id:link_label
+            text:''
+            color: 1,0,1,1 # <-----------
+
+
+        GridLayout:
+            cols:3
+            size_hint_y:0.1
+            Button:
+                text:'Copy Link'
+                on_press: root.copy_link()
+                background_normal: 'images/orange.jpg'
+                background_down:'images/red.jpg'
+            Button:
+                text:'Open Link'
+                on_press: root.open_link()
+                background_normal: 'images/orange.jpg'
+                background_down:'images/red.jpg'
+            Button:
+                text:'Back'
+                on_press:root.back()
+                background_normal: 'images/orange.jpg'
+                background_down:'images/red.jpg'
+
+<RootWidget>: #contains all the screens
+    #changing the background color to white
+    canvas.before:
+        Color:
+            rgba:(1,1,1,1)
+        Rectangle:
+            pos:self.pos
+            size:self.size
+
+# the first screen is CameraScreen
+    CameraScreen:
+        id:camera_screen
+        name:'camera_screen'
+    ImageScreen:
+        id:image_screen
+        name:'image_screen'
+
+

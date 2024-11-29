@@ -1,0 +1,24 @@
+
+what we need for each shape
+
+square:
+
+    x, y (start of the square)
+    side 
+    color
+    draw(canvas)
+
+Rectangle:
+
+    x,y
+    width
+    height
+    color
+    draw(canvas)
+
+canvas:
+    width
+    height
+    color
+    make(filepath)
+
