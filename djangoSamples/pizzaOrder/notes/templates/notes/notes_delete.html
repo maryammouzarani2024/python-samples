@@ -1,0 +1,15 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+{% load static %}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <img src="{% static 'OIP.jpg' %}" height=200/>
+      <p class="lead">Here we deliver most delicous Pizzas, you have ever tasted :) </p>
+    </div>
+<form method="POST" >{% csrf_token %}
+    <p> Are you sure you want to delete "{{notes.title}} "</p>
+    <p> The delete operation can not be undone </p>
+
+    <input type="submit" class="btn btn-danger" value="confirm" />
+</form>
+{% endblock %}

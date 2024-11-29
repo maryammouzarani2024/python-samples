@@ -1,0 +1,18 @@
+{% extends 'home/base.html' %}
+
+{%  block content %}
+{% load static %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Welcome to PizzaLand! </h1>
+    <img src="{% static 'OIP.jpg' %}" height=200/>
+    <p class="lead">Here we deliver delicous Pizzas, you have ever liked to taste :) </p>
+
+
+<form method="POST"> {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-secondary"/>
+
+</form>
+</div>
+
+{% endblock %}

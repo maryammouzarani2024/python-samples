@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+{% block content %}
+
+{% load static %}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <img src="{% static 'OIP.jpg' %}" height=200/>
+      <p class="lead">Here we deliver most delicous Pizzas, you have ever tasted :) </p>
+    </div>
+    
+<div class="border round ">
+<h1 class="my-5">{{note.title}}</h1>
+
+<p>{{note.text}}</p>
+
+<a href="{% url 'notes.list' %}" class="btn btn-outline-primary">Back</button>
+<a href="{% url 'notes.edit' pk=note.id %}" class="btn btn-outline-primary">Edit</button>
+<a href="{% url 'notes.delete' pk=note.id %}" class="btn   btn-outline-primary">Delete</button>
+
+</div>
+{% endblock %}

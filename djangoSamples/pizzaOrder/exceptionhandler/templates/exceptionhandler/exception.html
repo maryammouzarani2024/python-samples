@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+    {% block content %}
+    {% load static %}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4  overflow: scroll  text-center">
+      <img src="{% static 'OIP.jpg' %}" height=200/>
+    </div>
+
+   
+    <div class="card-deck align-items-center justify-content-center mb-3 text-center">
+      {% if exception %}
+      
+      {{exception}}
+      {% else %}
+      <p> Something went wrong. Please contact the administrator at admin@administration.com </p>
+      
+    {% endif %}
+    </div>
+   
+    {% endblock %}
+ 

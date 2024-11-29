@@ -1,0 +1,41 @@
+{% extends 'home/base.html' %}
+
+{%  block content %}
+{% load static %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4  text-center">
+    <h1 class="display-4">Welcome to PizzaLand! </h1>
+    <img src="{% static 'OIP.jpg' %}" height=200/>
+    <p class="lead">Here we deliver delicous Pizzas, you have ever liked to taste :) </p>
+
+    <div class="card-deck  align-items-center justify-content-center mb-3 text-center">
+        {% for pizza in pizzas %}
+        <div class=" mb-4   box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-norm  al">{{pizza.title}}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">${{pizza.price}} 
+            <small class="text-muted color:red" >%{{pizza.discount_value}}</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">  
+              <li>toppings: {{pizza.topping1}}</li>
+              <li>toppings: {{pizza.topping2}}</li>
+              <li>Size: {{pizza.size}}</li>
+              {% if pizza.image %}
+              <img class="card-img-top" src="{{pizza.image.url}}" height=200 width=200>
+              {% else %}
+              <img  class="card-img-top" class="card-img-top"src="{% static 'OIP.jpg' %}" height=200/>
+              {% endif %}
+            </ul>
+            <form action="{% url 'checkout' %}" method="GET">
+              <input type="hidden" value="{{pizza.id}}"  name="pizza_id" />
+              <input type="number" name="number" value="1" placeholder="1"  min="1" max="10">
+              <button type="submit" class="btn btn-lg btn-block btn-outline-primary">Order</button></a>
+        
+            </form>
+          </div>
+          <br>
+        </div>
+        {% endfor %}
+</div>
+
+{% endblock %}
