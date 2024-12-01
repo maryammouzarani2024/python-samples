@@ -56,7 +56,14 @@
             2. update the setup.py specially the version
             3. build the package again and upload it with twine
 
+12. arpSpoofing
+        a simple python code to test ARP spoofing.
 
+13. webSniffer
+        Sniff the web traffic using scapy library
+
+14. changeMAC
+        configuring the network interface and changing the physical address.
 
 
 
