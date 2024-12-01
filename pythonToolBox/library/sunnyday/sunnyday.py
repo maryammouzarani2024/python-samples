@@ -6,7 +6,7 @@ class Weather:
     """ Creates a Weather object letting an apikey as input and the lat and
     lon of a location.
     package use example:
-    >> weather1= Weather(apikey="2345678900987654", lat=42, lon=43)
+    >> weather1= Weather(apikey="your api key", lat=42, lon=43)
 
     #Get complete weather data for the next 12 hours:
 
