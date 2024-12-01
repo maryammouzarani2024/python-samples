@@ -1,0 +1,8 @@
+In case someone pushes new commits between your last git fetch and git push, you need to repeat your steps and rebase your_branch one more time.
+
+git fetch
+git rebase your_branch
+git push origin your_branch
+
+GUI used to check branches status:
+gitk --all
