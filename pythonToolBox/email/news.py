@@ -8,7 +8,7 @@ from wtforms.validators import email
 
 class NewsFeed:
     url_base="https://newsapi.org/v2/everything?"
-    api_key="29b38227b0594153b81c053225715d6c"
+    api_key="GET YOUR API KEY"
     def __init__(self, interest, from_date, to_date, language='en'):
         self.interest=interest
         self.from_date=from_date
