@@ -3,7 +3,7 @@ import pandas as pd
 
 data=pd.read_csv("tips.csv")
 #you can skip the first 5 rows:
-# pd.read_csv("tips.csv", skiprows=5)
+pd.read_csv("tips.csv", skiprows=5)
 
 #print the dimension of the data
 print(" the dimension of the data")
@@ -45,42 +45,50 @@ print(data.loc[220, "tip"])
 
 
 
-# #print statistical data info
-# print("statistical data info")
-# print(data.describe())
+#print statistical data info
+print("statistical data info")
+print(data.describe())
 
-# #to show all the rows:
-# pd.set_option("display.max_rows", None)
-# print(data)
-
-
-# #print unique size values
-# print(data["size"].unique())
-
-# #how many of each size exists in the data
-# print(data["size"].value_counts())
-
-# #change the name of some columns
-# print(data.columns)
-# #mapper= {data.columns[5]:"smoker_size", data.columns[4]:"smoke_day"}  or:
-# mapper= {"size":"smoker_size", "day":"smoke_day"}
-# data=data.rename(columns=mapper)
-
-# print("new columns: ", data.columns)
+#to show all the rows:
+pd.set_option("display.max_rows", None)
+print(data)
 
 
-# #drop some columns from data
-# data=data.drop('sex', axis=1)
-# print("new columns: ", data.columns)
+#print unique size values
+print(data["size"].unique())
+
+#how many of each size exists in the data
+print(data["size"].value_counts())
+
+#change the name of some columns
+print(data.columns)
+#mapper= {data.columns[5]:"smoker_size", data.columns[4]:"smoke_day"}  or:
+mapper= {"size":"smoker_size", "day":"smoke_day"}
+data=data.rename(columns=mapper)
+
+print("new columns: ", data.columns)
 
 
-# #filter rows by total_bill value
-# print("rows with total_bill<=10 ")
-# low_bills=data["total_bill"]<=10.00
+#drop some columns from data
+data=data.drop('sex', axis=1)
+print("new columns: ", data.columns)
 
-# # print(data[low_bills])
-# #or :
-# print(data[data["total_bill"]<=10.00])
+
+#filter rows by total_bill value
+print("rows with total_bill<=10 ")
+low_bills=data["total_bill"]<=10.00
+
+# print(data[low_bills])
+#or :
+print(data[data["total_bill"]<=10.00])
+
+
+#print the min bill at each time
+print("min bill at each time:")
+print(data.groupby(['time'])['total_bill'].min())
+
+print("min, max and count bill at each time")
+print(data.groupby(['time'])['total_bill'].agg(['min','max','count']))
 
 
 # #filter rows for non-smokers on sunday and Friday
@@ -96,3 +104,8 @@ print(data.loc[220, "tip"])
 # #sorting records by total_bill value
 # print("sorted data according to total_bill and tip")
 # print(data.sort_values(by=["total_bill", "tip"], ascending=[True, False]))
+
+
+# #data validation
+# # as an example nobody can smoke on sundays!!!
+# print(data.loc[(data["smoke_day"]=="Sun") & (data["smoker"]=="Yes")])
