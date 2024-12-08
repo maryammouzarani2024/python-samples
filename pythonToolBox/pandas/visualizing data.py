@@ -36,7 +36,7 @@ plt.show()
 # snb.countplot(data=selected_data,x="Product Category", order=["Technology", "Office Supplies", "Furniture"], hue='Ship Mode', palette='coolwarm_r')
 # plt.show()
 
-#Barplot  number of various customer segment in different ship modes
+#Barplot number of various customer segment in different ship modes
 
-#data.groupby(['Ship Mode'    , "Customer Segment"]).size().unstack('Ship Mode').sort_values(['Regular Air' ,'Delivery Truck', 'Express Air'], ascending=False).plot(kind='bar', color=['blue', 'pink'])
-# plt.show()
+#data.groupby(['Ship Mode', "Customer Segment"]).size().unstack('Ship Mode').sort_values(['Regular Air' ,'Delivery Truck', 'Express Air'], ascending=False).plot(kind='bar', color=['blue', 'pink'])
+#plt.show()
