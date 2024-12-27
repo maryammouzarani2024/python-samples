@@ -17,7 +17,7 @@ from .models import Pizza
 #Cursor pagination is the best performance choice for paginating large data sets
 class PizzaPagination(LimitOffsetPagination):
     default_limit=10
-    max_limit=100
+    max_limit=1000
 
 
 class PizzaAPIList(ListAPIView):
