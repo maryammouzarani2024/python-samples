@@ -1,4 +1,4 @@
-This is complete example of the back-end of an online store.
+This is a complete example of the back-end of an online store.
 The APIs are implemented using django rest framework. 
 
 
